@@ -1,7 +1,7 @@
 package com.deliveryit.challenge.thiago.infrastructure;
 
-import com.deliveryit.challenge.thiago.domain.services.PaymentService;
-import com.deliveryit.challenge.thiago.application.data.InvoiceRequest;
+import com.deliveryit.challenge.thiago.core.data.InvoiceRequest;
+import com.deliveryit.challenge.thiago.domain.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,6 @@ public class PaymentConsumer {
             this.paymentService.pay(invoiceRequest);
         }  catch (final Exception e) {
             log.error("Something went wrong for invoice request: {}.", invoiceRequest, e);
-            return;
         }
     }
 

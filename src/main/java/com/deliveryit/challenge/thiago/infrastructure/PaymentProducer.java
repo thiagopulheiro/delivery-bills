@@ -1,6 +1,6 @@
 package com.deliveryit.challenge.thiago.infrastructure;
 
-import com.deliveryit.challenge.thiago.application.data.InvoiceRequest;
+import com.deliveryit.challenge.thiago.core.data.InvoiceRequest;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
