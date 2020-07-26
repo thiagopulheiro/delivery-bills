@@ -27,7 +27,7 @@ public class PaymentService {
 
         final Integer daysOverdue = DateUtility.diff(invoiceRequest.getDueDate(), invoiceRequest.getPaymentDate(), TimeUnit.DAYS);
         final Fine fine = fineService.locate(daysOverdue);
-
+        log.debug("Applying fine: {} with days overdue {}.", fine, daysOverdue);
         final Invoice invoice = Invoice.builder()
                 .name(invoiceRequest.getName())
                 .amount(invoiceRequest.getAmount())

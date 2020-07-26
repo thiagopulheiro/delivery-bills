@@ -12,7 +12,7 @@ public class EarlyFine extends AbstractFine {
 
     @Override
     public boolean accept(Integer daysOverdue) {
-        return daysOverdue <= LIMIT;
+        return daysOverdue > 0 && daysOverdue <= LIMIT;
     }
 
 }
