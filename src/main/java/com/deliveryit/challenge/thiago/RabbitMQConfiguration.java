@@ -1,6 +1,6 @@
 package com.deliveryit.challenge.thiago;
 
-import com.deliveryit.challenge.thiago.core.messaging.PaymentProducer;
+import com.deliveryit.challenge.thiago.infrastructure.PaymentProducer;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.QueueBuilder;
 import org.springframework.amqp.rabbit.annotation.RabbitListenerConfigurer;

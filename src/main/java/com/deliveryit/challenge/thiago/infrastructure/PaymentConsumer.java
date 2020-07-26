@@ -1,12 +1,11 @@
-package com.deliveryit.challenge.thiago.core.messaging;
+package com.deliveryit.challenge.thiago.infrastructure;
 
-import com.deliveryit.challenge.thiago.core.PaymentService;
-import com.deliveryit.challenge.thiago.core.data.InvoiceRequest;
+import com.deliveryit.challenge.thiago.domain.services.PaymentService;
+import com.deliveryit.challenge.thiago.application.data.InvoiceRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.Objects;
 

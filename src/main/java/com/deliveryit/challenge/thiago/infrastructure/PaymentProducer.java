@@ -1,13 +1,10 @@
-package com.deliveryit.challenge.thiago.core.messaging;
+package com.deliveryit.challenge.thiago.infrastructure;
 
-import com.deliveryit.challenge.thiago.core.data.InvoiceRequest;
+import com.deliveryit.challenge.thiago.application.data.InvoiceRequest;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Async;
-import org.springframework.stereotype.Component;
 
 @AllArgsConstructor
 @Slf4j

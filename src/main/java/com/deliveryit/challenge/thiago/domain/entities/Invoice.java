@@ -1,4 +1,4 @@
-package com.deliveryit.challenge.thiago.domain;
+package com.deliveryit.challenge.thiago.domain.entities;
 
 import lombok.*;
 

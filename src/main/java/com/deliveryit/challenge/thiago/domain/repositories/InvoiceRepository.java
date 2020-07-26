@@ -1,6 +1,6 @@
-package com.deliveryit.challenge.thiago.port;
+package com.deliveryit.challenge.thiago.domain.repositories;
 
-import com.deliveryit.challenge.thiago.domain.Invoice;
+import com.deliveryit.challenge.thiago.domain.entities.Invoice;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

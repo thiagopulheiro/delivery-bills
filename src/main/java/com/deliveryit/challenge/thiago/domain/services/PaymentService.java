@@ -1,7 +1,7 @@
-package com.deliveryit.challenge.thiago.core;
+package com.deliveryit.challenge.thiago.domain.services;
 
-import com.deliveryit.challenge.thiago.core.data.InvoiceRequest;
-import com.deliveryit.challenge.thiago.port.InvoiceRepository;
+import com.deliveryit.challenge.thiago.application.data.InvoiceRequest;
+import com.deliveryit.challenge.thiago.domain.repositories.InvoiceRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

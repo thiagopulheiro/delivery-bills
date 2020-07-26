@@ -1,4 +1,4 @@
-package com.deliveryit.challenge.thiago.core.data;
+package com.deliveryit.challenge.thiago.application.data;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
