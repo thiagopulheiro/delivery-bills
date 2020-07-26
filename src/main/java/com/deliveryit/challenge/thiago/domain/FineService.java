@@ -7,10 +7,8 @@ import com.deliveryit.challenge.thiago.domain.fines.NoFine;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import javax.swing.text.html.Option;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Component
 public class FineService {

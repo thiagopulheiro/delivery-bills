@@ -5,7 +5,7 @@ Para executar a aplicacao, por favor, rode os seguintes comandos:
 _./mvnw clean install <br/>
 docker-compose up_
 
-Exemplo de adicao de nova conta (use postman ou curl):
+Exemplo de adicao de nova conta (use postman ou curl) na base localhost:8080:
 
 resource: /invoices<br/>
 method: POST<br/>

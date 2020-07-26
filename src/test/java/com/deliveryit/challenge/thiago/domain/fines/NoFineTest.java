@@ -1,11 +1,10 @@
 
 package com.deliveryit.challenge.thiago.domain.fines;
 
-        import org.junit.Assert;
-        import org.junit.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
-        import java.math.BigDecimal;
-        import java.math.RoundingMode;
+import java.math.BigDecimal;
 
 public class NoFineTest {
 

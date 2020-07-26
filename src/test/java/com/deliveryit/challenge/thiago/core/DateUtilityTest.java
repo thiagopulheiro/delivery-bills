@@ -1,6 +1,5 @@
 package com.deliveryit.challenge.thiago.core;
 
-import com.deliveryit.challenge.thiago.domain.fines.NoFine;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -25,7 +25,7 @@ public class PaymentConsumer {
         log.debug("Submitting new invoice: {}...", invoiceRequest);
         try {
             this.paymentService.pay(invoiceRequest);
-        }  catch (final Exception e) {
+        } catch (final Exception e) {
             log.error("Something went wrong for invoice request: {}.", invoiceRequest, e);
         }
     }
