@@ -1,5 +1,9 @@
 # delivery-bills
 
+Obs: a opcao de usar o RabbitMQ para receber as requisicoes de pagamentos foi para exemplificar o desacoplamento que e'
+possivel de ser feito numa arquitetura orientada a eventos, bem como a resiliencia de ter uma segunda opcao caso o 
+broker esteja indisponivel (execucao ad-hoc) - praticas reativas. <br/>
+
 Para executar a aplicacao, por favor, rode os seguintes comandos:
 
 _./mvnw clean install <br/>
