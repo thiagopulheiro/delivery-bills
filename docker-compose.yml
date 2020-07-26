@@ -1,0 +1,25 @@
+app:
+  build: .
+  environment:
+    PAYMENT_QUEUE: payment.queue
+    RABBITMQ_HOST: rabbitmq
+    RABBITMQ_PORT: 5672
+    RABBITMQ_VHOST: /
+    RABBITMQ_USERNAME: guest
+    RABBITMQ_PASSWORD: guest
+    JDBC_URL: jdbc:mysql://mysql:3306/challenge?user=root&password=secret
+  links:
+    - mysql:mysql
+    - rabbitmq:rabbitmq
+  entrypoint: ["./wait-for-it.sh", "mysql:3306", "--",
+               "./wait-for-it.sh", "rabbitmq:5672", "--",
+               "java","-jar", "-Denable_rabbit=y", "deliverybills-0.0.1-SNAPSHOT.jar"]
+mysql:
+  image: mysql:5.7
+  environment:
+    MYSQL_DATABASE: challenge
+    MYSQL_ROOT_PASSWORD: secret
+rabbitmq:
+  image: rabbitmq:3.6-management
+  ports:
+    - 15672:15672
