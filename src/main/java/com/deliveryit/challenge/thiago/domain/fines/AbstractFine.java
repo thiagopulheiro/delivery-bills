@@ -3,6 +3,7 @@ package com.deliveryit.challenge.thiago.domain.fines;
 import com.deliveryit.challenge.thiago.domain.Fine;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public abstract class AbstractFine implements Fine {
     private Integer finePercentage;
@@ -20,21 +21,10 @@ public abstract class AbstractFine implements Fine {
 
     @Override
     public BigDecimal apply(BigDecimal amount, Integer daysOverdue) {
-        BigDecimal fine = amount.multiply(BigDecimal.valueOf(finePercentage / 100));
-        BigDecimal daily = amount.multiply(BigDecimal.valueOf((dailyPercentage * daysOverdue) / 100));
-        return amount.add(fine).add(daily);
-    }
-
-    public static void main(String[] args) {
-        BigDecimal amount = new BigDecimal(100);
-        int finePercentage = 3;
-        float dailyPercentage = 0.1f;
-        int daysOverdue = 3;
-        BigDecimal fine = amount.multiply(BigDecimal.valueOf(finePercentage / 100));
-        System.out.println(fine);
-        BigDecimal daily = amount.multiply(BigDecimal.valueOf((dailyPercentage * daysOverdue) / 100));
-        System.out.println(daily);
-         amount.add(fine).add(daily);
-        System.out.println(amount);
+        BigDecimal fine = amount.multiply(new BigDecimal(finePercentage)
+                .divide(new BigDecimal(100)));
+        BigDecimal daily = amount.multiply((new BigDecimal(dailyPercentage).multiply(new BigDecimal(daysOverdue)))
+                .divide(new BigDecimal(100)));
+        return amount.add(fine).add(daily).setScale(2, RoundingMode.HALF_EVEN);
     }
 }

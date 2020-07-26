@@ -1,5 +1,6 @@
 package com.deliveryit.challenge.thiago.domain;
 
+import com.deliveryit.challenge.thiago.core.DateUtility;
 import com.deliveryit.challenge.thiago.core.data.InvoiceRequest;
 import com.deliveryit.challenge.thiago.domain.entities.Invoice;
 import com.deliveryit.challenge.thiago.domain.repositories.InvoiceRepository;
@@ -10,8 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
-import static com.deliveryit.challenge.thiago.core.DateUtility.diff;
 
 @Service
 @Slf4j
@@ -26,7 +25,7 @@ public class PaymentService {
     @Transactional
     public void pay(InvoiceRequest invoiceRequest) {
 
-        final Integer daysOverdue = diff(invoiceRequest.getDueDate(), invoiceRequest.getPaymentDate(), TimeUnit.DAYS);
+        final Integer daysOverdue = DateUtility.diff(invoiceRequest.getDueDate(), invoiceRequest.getPaymentDate(), TimeUnit.DAYS);
         final Fine fine = fineService.locate(daysOverdue);
 
         final Invoice invoice = Invoice.builder()
