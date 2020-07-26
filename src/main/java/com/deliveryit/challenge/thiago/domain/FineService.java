@@ -19,7 +19,7 @@ public class FineService {
     private final Fine noFine = new NoFine();
 
     @PostConstruct
-    private void buildFineList() {
+    public void buildFineList() {
         fines.add(new EarlyFine());
         fines.add(new MediumFine());
         fines.add(new CriticalFine());
